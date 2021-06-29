@@ -8,6 +8,7 @@ const ul = document.getElementById('ul')
 /**
  * 常规写法
  *  bug: 当li包裹了span,当你点击span的话就会出现问题
+ *  [Element.matches()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/matches)
  */
 ul.addEventListener('click', (e)=>{
     if(e.target.matches('li')){
@@ -21,10 +22,10 @@ ul.addEventListener('click', (e)=>{
  *
  *  [Element.matches()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/matches)
  *
- * @param rootSelector 父元素
- * @param delegateElement 代理元素 css选择器字符串
- * @param eventType 代理事件类型
- * @param fn 代理事件
+ * @param rootSelector {Element} 父元素
+ * @param delegateElement {String} 代理元素 css选择器字符串
+ * @param eventType {GlobalEventHandlersEventMap} 代理事件类型
+ * @param fn {Function} 代理事件
  * @returns {*}
  */
 function delegate(rootSelector,  delegateElement, eventType, fn) {

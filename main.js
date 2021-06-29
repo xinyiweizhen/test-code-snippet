@@ -87,53 +87,53 @@
 
 
 
-const rowset = [
-    {  "showSeq": 10,
-    "componentKey": "check_type",
-    "title": "审核类型:",
-    "type": "select_item",
-    "prompt_msg": "请填写审核类型",
-    "readonly":false,
-    "required":true,
-    "span":8 ,
-    "classify":'BASIC',
-    "tabGroup":'BASIC_INFO'},
-    {  "showSeq": 10,
-    "componentKey": "check_type",
-    "title": "审核类型:",
-    "type": "select_item",
-    "prompt_msg": "请填写审核类型",
-    "readonly":false,
-    "required":true,
-    "span":8 ,
-    "classify":'BASIC',
-    "tabGroup":'BASIC_INFO'
-},
-{  "showSeq": 10,
-    "componentKey": "check_type",
-    "title": "审核类型:",
-    "type": "select_item",
-    "prompt_msg": "请填写审核类型",
-    "readonly":false,
-    "required":true,
-    "span":8 ,
-    "classify":'WORKS',
-    "tabGroup":'APPLY_INFO'    //这里是另一个tab页
-
-},
-    {
-    "showSeq": 10,
-        "componentKey": "check_type",
-        "title": "审核类型:",
-        "type": "select_item",
-        "prompt_msg": "请填写审核类型",
-        "readonly":false,
-        "required":true,
-        "span":8 ,
-        "classify":'WORKS',
-        "tabGroup":'APPLY_INFO'    //这里是另一个tab页
-}
-]
+// const rowset = [
+//     {  "showSeq": 10,
+//     "componentKey": "check_type",
+//     "title": "审核类型:",
+//     "type": "select_item",
+//     "prompt_msg": "请填写审核类型",
+//     "readonly":false,
+//     "required":true,
+//     "span":8 ,
+//     "classify":'BASIC',
+//     "tabGroup":'BASIC_INFO'},
+//     {  "showSeq": 10,
+//     "componentKey": "check_type",
+//     "title": "审核类型:",
+//     "type": "select_item",
+//     "prompt_msg": "请填写审核类型",
+//     "readonly":false,
+//     "required":true,
+//     "span":8 ,
+//     "classify":'BASIC',
+//     "tabGroup":'BASIC_INFO'
+// },
+// {  "showSeq": 10,
+//     "componentKey": "check_type",
+//     "title": "审核类型:",
+//     "type": "select_item",
+//     "prompt_msg": "请填写审核类型",
+//     "readonly":false,
+//     "required":true,
+//     "span":8 ,
+//     "classify":'WORKS',
+//     "tabGroup":'APPLY_INFO'    //这里是另一个tab页
+//
+// },
+//     {
+//     "showSeq": 10,
+//         "componentKey": "check_type",
+//         "title": "审核类型:",
+//         "type": "select_item",
+//         "prompt_msg": "请填写审核类型",
+//         "readonly":false,
+//         "required":true,
+//         "span":8 ,
+//         "classify":'WORKS',
+//         "tabGroup":'APPLY_INFO'    //这里是另一个tab页
+// }
+// ]
 
 
 // const list = rowset.reduce((previousValue, currentValue, currentIndex) => {
@@ -173,4 +173,5 @@ const rowset = [
 // }
 
 
-console.log(list);
+// console.log(list);
+

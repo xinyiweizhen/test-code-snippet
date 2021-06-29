@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <title>Canvas 测试代码</title>
 </head>
+<style>
+    canvas{
+        border: 1px solid #cc0000;
+        margin-left: 20px;
+    }
+
+</style>
 <body>
-<canvas id="canvas" width="500" height="500">
-    你的浏览器不支持canvas!
-</canvas>
+
+
+<div class="panel">
+    <canvas id="canvas" width="500" height="500">
+        你的浏览器不支持canvas!
+    </canvas>
+    <canvas id="panel-canvas" width="500" height="500">你的浏览器不支持canvas!</canvas>
+</div>
 </body>
 <script type="module" src="index.js"></script>
+<script type="module" src="panel.js"></script>
 </html>
