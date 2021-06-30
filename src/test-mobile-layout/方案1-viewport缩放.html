@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    手动设置 -->
+    <!--    <meta name="viewport" content="width={设计稿宽度}, initial-scale={屏幕逻辑像素宽度/设计稿宽度}" >  -->
+    <!--    假设这里的设计稿宽度为750px, 屏幕逻辑像素宽度为 375px-->
+    <meta name="viewport" content="width=750px,initial-scale=0.5">
+    <title>方案1-viewport缩放</title>
+</head>
+<style>
+
+</style>
+<body>
+<div class="content">
+
+</div>
+</body>
+<script>
+    /**
+     * 可以手动设置，也可以用js设置
+     * @type {number}
+     */
+
+    // 设计稿宽度
+    const WIDTH = 750
+    const mobileAdapter = () => {
+        // 获取设备屏幕逻辑像素宽度
+        let scale = document.documentElement.clientWidth/WIDTH
+        let content = `width=${WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}`
+        let meta = document.querySelector('meta[name=viewport]')
+        if(!meta) {
+            meta = document.createElement('meta')
+            meta.setAttribute('name', 'viewport')
+            document.head.appendChild(meta)
+        }
+        meta.setAttribute('content', content)
+    }
+    mobileAdapter()
+</script>
+</html>

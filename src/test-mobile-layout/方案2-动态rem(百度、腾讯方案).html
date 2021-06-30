@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方案2-动态rem(百度、腾讯方案)</title>
+    <!--  1. 设置理想视口  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleable=no,maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+</head>
+<style>
+    /*3. 编写样式，计算取值*/
+    .content{
+        /* 值为：取值 = 设计值 / 100 */
+        width: 9.2rem;
+    }
+</style>
+<body>
+<div class="content">
+
+</div>
+</body>
+<script>
+    /**
+     * 2. 动态设置根字体
+     */
+    function adapter() {
+        // 获取布局视口宽度， 因为开启了理想视口，布局视口 = 设备横向独立像素值
+        const dpWidth = document.documentElement.clientWidth;
+        // 计算根字体大小 根字体 = (设备横向独立像素值 * 100 ) / 设计稿宽度
+        const rootFontSize = dpWidth * 100 / 375;
+        // 设置跟字体大小
+        document.documentElement.style.fontSize = rootFontSize;
+    }
+    adapter()
+    document.onresize = adapter
+</script>
+</html>

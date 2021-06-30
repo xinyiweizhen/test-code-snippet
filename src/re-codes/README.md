@@ -6,7 +6,7 @@
 | ----------------- | ------------------- |
 | Object-create.js  | 实现Object.creact() |
 | delegate-event.js | 手写事件代理        |
-|                   |                     |
+|       forEach     | 手写实现Array.forEach() |
 
 
 ###### 实现Object.create()

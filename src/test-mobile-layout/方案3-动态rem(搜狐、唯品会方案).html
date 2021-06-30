@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--  1. 设置理想视口  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleable=no,maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>方案3-动态rem(搜狐、唯品会方案)</title>
+</head>
+<style>
+    .content{
+        /*  3.计算值： 取值 = 设计值 / (设计稿宽度 / 10)   */
+        width: 9.2rem;
+        height: 4rem;
+        margin: 0 auto;
+        margin-top: 0.4rem;
+        background: black;
+    }
+</style>
+<body>
+<div class="content">
+
+</div>
+</body>
+<script>
+    /**
+     * 2. 动态设置根字体
+     */
+    function adapter() {
+        // 获取布局视口宽度， 因为开启了理想视口，布局视口 = 设备横向独立像素值
+        const dpWidth = document.documentElement.clientWidth;
+        // 计算根字体大小
+        const rootFontSize = dpWidth / 10;
+        // 设置跟字体大小
+        document.documentElement.style.fontSize = rootFontSize;
+    }
+    adapter()
+    document.onresize = adapter
+</script>
+</html>
