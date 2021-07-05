@@ -106,7 +106,7 @@
 //     "readonly":false,
 //     "required":true,
 //     "span":8 ,
-//     "classify":'BASIC',
+//     "classify":'BASICC',
 //     "tabGroup":'BASIC_INFO'
 // },
 // {  "showSeq": 10,
@@ -130,21 +130,18 @@
 //         "readonly":false,
 //         "required":true,
 //         "span":8 ,
-//         "classify":'WORKS',
+//         "classify":'WORKSS',
 //         "tabGroup":'APPLY_INFO'    //这里是另一个tab页
 // }
 // ]
 
-
+//
 // const list = rowset.reduce((previousValue, currentValue, currentIndex) => {
+//     const temp = {}
 //     rowset.map(item =>{
 //         if(currentValue.tabGroup === item.tabGroup){
-//             previousValue[item.tabGroup] = {
-//                 [item.classify]: rowset.filter((item2)=>item2.classify === item.classify)
-//             }
-//         }
-//         if(currentValue.classify === item.classify){
-//             arr.push(item)
+//             temp[item.classify] = rowset.filter((item2)=>item2.classify === item.classify)
+//             previousValue[item.tabGroup] = temp
 //         }
 //     })
 //     return previousValue
@@ -174,4 +171,3 @@
 
 
 // console.log(list);
-

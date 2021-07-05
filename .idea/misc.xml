@@ -3,4 +3,7 @@
   <component name="GitToolBoxProjectSettings">
     <option name="autoFetchIntervalMinutes" value="180" />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="JSX" />
+  </component>
 </project>
