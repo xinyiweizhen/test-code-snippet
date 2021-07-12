@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.canvas设置线宽和颜色</title>
+</head>
+<style>
+    #canvas{
+        margin: 0 auto;
+        border: 2px solid #c2c2c2;
+        /* 如果让 canvas 左右居中， 就要使用 display: block */
+        display: block;
+    }
+</style>
+<body>
+<!-- canvas在低版本浏览器中不兼容，需要提示用户 -->
+<canvas id="canvas" width="500" height="500">你的浏览器不支持canvas!</canvas>
+</body>
+<script>
+    /**
+     * [lineWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/lineWidth)
+     *
+     * [strokeStyle](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
+     *
+     */
+
+    const  canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+    ctx.beginPath()
+    ctx.moveTo(100, 200)
+    ctx.lineTo(200, 200)
+    /**
+    * TODO　在着色之前设置线段的样式
+    *
+    */
+    // TODO　设置线宽
+    ctx.lineWidth = 5
+    // TODO　设置颜色
+    ctx.strokeStyle = '#ff0000'
+    ctx.stroke()
+    ctx.closePath()
+</script>
+</html>

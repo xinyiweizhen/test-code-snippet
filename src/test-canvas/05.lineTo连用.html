@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05.lineTo连用</title>
+</head>
+<style>
+    #canvas{
+        margin: 0 auto;
+        border: 2px solid #c2c2c2;
+        /* 如果让 canvas 左右居中， 就要使用 display: block */
+        display: block;
+    }
+</style>
+<body>
+<!-- canvas在低版本浏览器中不兼容，需要提示用户 -->
+<canvas id="canvas" width="500" height="500">你的浏览器不支持canvas!</canvas>
+</body>
+<script>
+    const  canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+
+    ctx.beginPath()
+    ctx.moveTo(100, 100)
+    ctx.strokeStyle = 'red'
+    ctx.lineTo(400, 100)
+    ctx.lineTo(400, 400)
+    ctx.lineTo(100, 400)
+    ctx.lineTo(100, 100)
+    ctx.lineWidth = 5
+    ctx.lineCap= 'round'
+    ctx.stroke()
+    ctx.closePath()
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04.案例1（多彩边框矩形）</title>
+</head>
+<style>
+    #canvas{
+        margin: 0 auto;
+        border: 2px solid #c2c2c2;
+        /* 如果让 canvas 左右居中， 就要使用 display: block */
+        display: block;
+    }
+</style>
+<body>
+<!-- canvas在低版本浏览器中不兼容，需要提示用户 -->
+<canvas id="canvas" width="500" height="500">你的浏览器不支持canvas!</canvas>
+</body>
+<script>
+    const  canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+
+    drawLine(100, 100, 400, 100, 4, 'red')
+    drawLine(400, 100, 400, 400, 4, 'green')
+    drawLine(400, 400, 100, 400, 4, 'yellow')
+    drawLine(100, 400, 100, 100, 4, 'pink')
+
+    /**
+     * 画直线
+     * @param x1 起始x坐标
+     * @param y1 起始y坐标
+     * @param x2 结束x坐标
+     * @param y2 结束y坐标
+     * @param lineWidth 线段宽度
+     * @param color 线段颜色
+     */
+    function drawLine(x1, y1, x2, y2, lineWidth = 1, color) {
+        ctx.beginPath()
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.lineWidth = lineWidth
+        ctx.lineCap= 'round'
+        ctx.strokeStyle = color
+        ctx.stroke()
+        ctx.closePath()
+    }
+</script>
+</html>

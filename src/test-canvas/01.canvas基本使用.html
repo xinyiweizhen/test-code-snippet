@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01.canvas基本使用</title>
+</head>
+<style>
+    #canvas{
+        margin: 0 auto;
+        border: 2px solid #c2c2c2;
+        /* 如果让 canvas 左右居中， 就要使用 display: block */
+        display: block;
+    }
+</style>
+<body>
+<!-- canvas在低版本浏览器中不兼容，需要提示用户 -->
+<canvas id="canvas" width="500" height="500">你的浏览器不支持canvas!</canvas>
+</body>
+<script>
+    /**
+     * 使用到的方法
+     *  [getContext()](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/getContext)
+     */
+
+    // TODO step1: 获取 canvas 标签
+    const  canvas = document.getElementById('canvas')
+    // TODO step2: 获取2d上下文对象
+    const ctx = canvas.getContext('2d')
+</script>
+</html>
