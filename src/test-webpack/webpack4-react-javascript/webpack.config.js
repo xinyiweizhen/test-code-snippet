@@ -50,7 +50,8 @@ module.exports = (env)=>{
                   test: /\.css$/,
                   use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
+                    'postcss-loader'
                   ]
                 }
             ]
@@ -76,6 +77,11 @@ module.exports = (env)=>{
                   to: '',
                 }
               ]
+            }),
+
+            new MiniCssExtractPlugin({
+              filename: '[name].[contenthash:8].css',
+              ignoreOrder: true,
             }),
 
             new BundleAnalyzerPlugin({
