@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.canvas画虚线</title>
+</head>
+<style>
+    #canvas{
+        margin: 0 auto;
+        border: 2px solid #c2c2c2;
+        /* 如果让 canvas 左右居中， 就要使用 display: block */
+        display: block;
+    }
+</style>
+<body>
+<!-- canvas在低版本浏览器中不兼容，需要提示用户 -->
+<canvas id="canvas" width="500" height="500">你的浏览器不支持canvas!</canvas>
+</body>
+<script>
+    /**
+     *
+     *  Canvas 2D API的CanvasRenderingContext2D接口的setLineDash()方法在填充线时使用虚线模式。
+     *  它使用一组值来指定描述模式的线和间隙的交替长度。
+     *
+     *  [setLineDash(segments)](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/setLineDash)
+     *
+     */
+
+
+    const  canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+    let y = 50
+    // 空数组表示实线
+    drawDashedLine([])
+    // 线：10 间隔： 10  ......
+    drawDashedLine([10, 10])
+    // 线：20 间隔： 10  ......
+    drawDashedLine([20, 10]);
+    // 线：10 间隔： 3  线：3 间隔：10 线：3 间隔： 3
+    drawDashedLine([10, 3, 3]) // [10, 3, 3, 10, 3, 3]
+    // 线：10 间隔： 5  线：5 间隔：10 线：5 间隔： 5
+    drawDashedLine([10, 5, 5]) // [10, 5, 5, 10, 5, 5]
+    // 线：10 间隔： 3  线：3 间隔：3
+    drawDashedLine([10, 3, 3, 3])
+    // 线：10 间隔： 5  线：5 间隔：5
+    drawDashedLine([10, 5, 5, 5])
+
+    drawDashedLine([20, 3, 3, 3, 3, 3, 3, 3]);
+
+
+
+    function drawDashedLine(pattern) {
+        ctx.beginPath();
+        ctx.setLineDash(pattern);
+        ctx.moveTo(20, y);
+        ctx.lineTo(400, y);
+        ctx.stroke();
+        y += 50;
+    }
+
+</script>
+</html>
