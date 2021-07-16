@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>+/~ 选择器案例</title>
+</head>
+<style>
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    button{
+        outline: none;
+        border: none;
+        background-color: #fff;
+    }
+    .specify-selector{
+        display: flex;
+    }
+    /* 选择元素相邻的 同胞元素 */
+    .specify-selector + .specify-selector{
+        margin-top: 20px;
+    }
+    .specify-selector .list{
+        border: 1px solid #f66;
+        width: 320px;
+        line-height: 2;
+        font-weight: bold;
+        font-size: 18px;
+        color: #f66;
+    }
+    .specify-selector .list + .list{
+        margin-left: 20px;
+    }
+    .specify-selector .list li{
+        padding: 0 10px;
+        margin: 10px 0;
+    }
+    .specify-selector .list .next{
+        background-color: #66f;
+        color: #fff;
+    }
+    /* 选择标签 ==》 相邻的同胞元素 */
+    .specify-selector .list .next + li{
+        background-color: #f90;
+        color: #fff;
+    }
+    .specify-selector .list .next-all{
+        background-color: #66f;
+        color: #fff;
+    }
+    /* 选择标签 ==》元素后面的同胞元素 */
+    .specify-selector .list .next-all ~ li{
+        background-color: #f90;
+        color: #fff;
+    }
+    .specify-selector .list .next-filter{
+        background-color: #66f;
+        color: #fff;
+    }
+    /* 选择类名 ==》元素后面的同胞元素 */
+    .specify-selector .list .next-filter ~ .filter{
+        background-color: #f90;
+        color: #fff;
+    }
+    .button + .button{
+        margin-left: 20px;
+    }
+    .button label{
+        display: block;
+        padding: 0 10px;
+        height: 40px;
+        background-color: #09f;
+        cursor: pointer;
+        line-height: 40px;
+        font-size: 16px;
+        color: #fff;
+        transition: all 300ms;
+    }
+    .button input:checked + label{
+        padding: 0 20px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+<div class="specify-selector">
+    <ul class="list">
+        <li>同胞元素</li>
+        <li class="next">当前元素</li>
+        <li>+ 选择的元素相邻同胞元素</li>
+        <li>同胞元素</li>
+        <li>同胞元素</li>
+    </ul>
+    <ul class="list">
+        <li>同胞元素</li>
+        <li class="next-all">当前元素</li>
+        <li>~ 选择的元素后面的同胞元素(标签)</li>
+        <li>~ 选择的元素后面的同胞元素(标签)</li>
+        <li>~ 选择的元素后面的同胞元素(标签)</li>
+    </ul>
+    <ul class="list">
+        <li>同胞元素</li>
+        <li class="next-filter">当前元素</li>
+        <li>同胞元素</li>
+        <li class="filter">~ 选择的元素后面的同胞元素(类名)</li>
+        <li>同胞元素</li>
+    </ul>
+</div>
+<div class="specify-selector">
+    <button class="button">
+        <input id="btn1" type="radio" name="btns" hidden>
+        <label for="btn1">点击我切换样式</label>
+    </button>
+    <button class="button">
+        <input id="btn2" type="radio" name="btns" hidden>
+        <label for="btn2">点击我切换样式</label>
+    </button>
+    <button class="button">
+        <input id="btn3" type="radio" name="btns" hidden>
+        <label for="btn3">点击我切换样式</label>
+    </button>
+</div>
+</body>
+</html>
