@@ -133,5 +133,26 @@ function Promise(executor) {
 }
 ```
 
+基本上就是在判断状态为pending之后把状态改为相应的值，并把对应的`value`和`reason`存在`self`的`data`属性上面，之后执行相应的回调函数，逻辑很简单，这里就不多解释了。
+
+
+**then方法**
+Promise对象有一个`then`方法，用来注册在这个Promise状态确定后的回调，很明显，`then`方法需要写在原型链上。`then`方法会返回一个Promise，关于这一点，Promise/A+标准并没有要求返回的这个Promise是一个新的对象，但在Promise/A标准中，明确规定了then要返回一个新的对象，目前的Promise实现中then几乎都是返回一个新的Promise(详情)对象，所以在我们的实现中，也让then返回一个新的Promise对象。
+
+关于这一点，我认为标准中是有一点矛盾的：
+
+[标准中说](https://promisesaplus.com/#point-49)，如果promise2 = promise1.then(onResolved, onRejected)里的onResolved/onRejected返回一个Promise，则promise2直接取这个Promise的状态和值为己用，但考虑如下代码：
+
+```javascript
+promise2 = promise1.then(function foo(value) {
+  return Promise.reject(3)
+})
+```
+
+此处如果foo运行了，则promise1的状态必然已经确定且为resolved，如果then返回了this（即promise2 === promise1），说明promise2和promise1是同一个对象，而此时promise1/2的状态已经确定，没有办法再取Promise.reject(3)的状态和结果为己用，因为Promise的状态确定后就不可再转换为其它状态。
+
+另外每个Promise对象都可以在其上多次调用then方法，而每次调用then返回的Promise的状态取决于那一次调用then时传入参数的返回值，所以then不能返回this，因为then每次返回的Promise的结果都有可能不同。
+
+下面我们来实现then方法：
 
 [剖析Promise内部结构，一步一步实现一个完整的、能通过所有Test case的Promise类 ](https://github.com/xieranmaya/blog/issues/3)
