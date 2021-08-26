@@ -53,6 +53,13 @@ const HelloMaterialUI = (props)=>{
             <ListSubheader component="div" id="nested-list-subheader">
                 响应式
             </ListSubheader>
+            {
+                toGroup(routes, 'Responsive').map((route)=>(
+                    <ListItem key={route.key} selected={tab === route.key} component={Link} href={`#${route.path}`}>
+                        {route.key}
+                    </ListItem>
+                ))
+            }
         </List>
         <Divider />
         <List >
@@ -72,6 +79,19 @@ const HelloMaterialUI = (props)=>{
             <ListSubheader component="div" id="nested-list-subheader">
                 库
             </ListSubheader>
+        </List>
+        <Divider/>
+        <List >
+            <ListSubheader component="div" id="nested-list-subheader">
+                Charts
+            </ListSubheader>
+            {
+                toGroup(routes, 'Charts').map((route)=>(
+                    <ListItem key={route.key} selected={tab === route.key} component={Link} href={`#${route.path}`}>
+                        {route.key}
+                    </ListItem>
+                ))
+            }
         </List>
     </div>)
 

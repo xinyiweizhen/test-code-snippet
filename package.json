@@ -8,8 +8,5 @@
   },
   "devDependencies": {
     "vite": "^2.2.3"
-  },
-  "dependencies": {
-    "@material-ui/icons": "^4.11.2"
   }
 }

@@ -5,7 +5,7 @@ const Router = ()=>(
     <HashRouter>
         <React.Suspense fallback={'加载中。。。'}>
             <Switch>
-                <Route path={'/:tab?'} component={React.lazy(()=>import('../pages/HelloWorld/index.js'))}/>
+                <Route path={'/:tab?'} component={React.lazy(()=>import('../pages/Home/index.js'))}/>
             </Switch>
         </React.Suspense>
     </HashRouter>
