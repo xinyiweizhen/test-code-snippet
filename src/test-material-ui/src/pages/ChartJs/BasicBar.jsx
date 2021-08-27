@@ -70,8 +70,7 @@ const BasicBar = () => {
         },
         plugins: {
             legend: {
-                display: true,
-                position: horizontal ? 'right' : 'top'
+                display: false,
             },
         }
     };
@@ -84,6 +83,12 @@ const BasicBar = () => {
             <div   className={classes.content}>
                 <Bar data={data} options={options} />
             </div>
+            <a
+                className='btn btn-gh'
+                href='https://github.com/xinyiweizhen/test-code-snippet/blob/master/src/test-material-ui/src/pages/ChartJs/BasicBar.jsx'
+            >
+                Github Source
+            </a>
         </>
     )
 

@@ -44,6 +44,12 @@ const BasicLine = React.memo(()=>{
            <div className={classes.content}>
                <Line data={data} options={options} fallbackContent={<div>你的浏览器暂不支持canvas!</div>}/>
            </div>
+           <a
+               className='btn btn-gh'
+               href='https://github.com/xinyiweizhen/test-code-snippet/blob/master/src/test-material-ui/src/pages/ChartJs/BasicLine.jsx'
+           >
+               Github Source
+           </a>
        </>
     );
 })
